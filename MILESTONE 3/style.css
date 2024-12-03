@@ -1,0 +1,92 @@
+/* *{
+    padding: 0;
+    margin: 0;
+} */
+
+body{
+    margin: 20px;
+    padding: 0;
+    background-color:white;
+}
+form{
+    background-color: rgb(204, 228, 253);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(48, 43, 43, 0.5);
+    padding: 20px;
+    max-width: 700px;
+    margin: auto;
+}
+h1{
+    text-align: center;
+    color: black;
+}
+fieldset{
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(219, 234, 247);
+    border: 2px solid rgb(58, 58, 63);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+legend {
+    font-size:20px ;
+    font-weight: bold;
+    text-align: left;
+}
+
+label{
+    display: block;
+    margin-top:5px;
+}
+input,textarea {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 10px;
+    /* width: 100%; */
+    width: calc(100% - 1px);
+    border: 2px solid rgb(204, 228, 253);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button{
+    height: 40px;
+    width: calc(100% - 400px);
+    background-color: rgb(157, 198, 231);
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: rgb(3, 36, 63);
+    color: white;
+}
+#buttonadjust{
+    display: flex;
+    justify-content: center;
+}
+
+
+/* GENERated Resume styling */
+
+#resume-display{
+    padding: 20px;
+    border: 2px solid black;
+    /* text-align: center; */
+    margin: auto;
+    max-width: 50%;
+}
+#resume-display h2 {
+    color: rgb(8, 8, 85);
+    text-align: center;
+    text-decoration: underline;
+}
+#resume-display h3 {
+    color: rgb(8, 8, 85);
+    text-decoration: underline;
+
+}
+
