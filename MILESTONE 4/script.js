@@ -12,7 +12,7 @@ form.addEventListener('submit', function (event) {
     var skills = document.getElementById('skills').value;
     //generate the resume content dynamically
     //  we use backtick here 
-    var resumeHTML = "\n        <h2><b>Your Resume</b></h2>\n        <h3>Personal Information</h3>\n        <p contenteditable=\"true\"><b>Name :</b> ".concat(name, "</p>\n        <p contenteditable=\"true\"><b>Email :</b> ").concat(email, "</p>\n        <p contenteditable=\"true\"><b>Phone :</b> ").concat(phone, "</p>\n        <h3>Education</h3>\n        <p contenteditable=\"true\"><b>").concat(education, "</b></p>\n        <h3>Experience</h3>\n        <p contenteditable=\"true\"><b>").concat(experience, "</b></p>\n        <h3>Skills</h3>\n        <p contenteditable=\"true\"><b>").concat(skills, "</b></p>    ");
+    var resumeHTML = "\n        <h2 contenteditable=\"true\"><b>".concat(name, " Resume</b></h2>\n        <h3>Personal Information</h3>\n        <p><b>Name :</b><span contenteditable=\"true\"> ").concat(name, "</span></p> \n        <p><b>Email :</b> <span contenteditable=\"true\"> ").concat(email, "</span></p>\n        <p><b>Phone :</b> <span contenteditable=\"true\"> ").concat(phone, "</span></p>\n        <h3>Education</h3>\n        <p contenteditable=\"true\"><b>").concat(education, "</b></p>\n        <h3>Experience</h3>\n        <p contenteditable=\"true\"><b>").concat(experience, "</b></p>\n        <h3>Skills</h3>\n        <p contenteditable=\"true\"><b>").concat(skills, "</b></p>    ");
     if (resumeDisplayElement) {
         resumeDisplayElement.innerHTML = resumeHTML;
     }
