@@ -63,7 +63,7 @@ form.addEventListener('submit', (event: Event) => {
     // Generate a unique URL
     const myName : string = username.toLowerCase().replace(/\s+/g, "-");
     const baseUrl :string = window.location.origin + window.location.pathname;
-    uniqueUrl = `${baseUrl}?user=${myName}`;
+    uniqueUrl = `${baseUrl}?user=${myName}/resume`;
 
     // Set the unique URL for sharing
     urlButton.addEventListener('click', () => {
