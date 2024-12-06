@@ -42,29 +42,43 @@ form.addEventListener('submit', (event) => {
     // Enable buttons
     urlButton.disabled = false;
     copyLinkButton.disabled = false;
-    // Handle download as PDF
-    downloadPdfButton.addEventListener('click', () => {
-        const printWindow = window.open('', '', 'width=800,height=600');
-        printWindow === null || printWindow === void 0 ? void 0 : printWindow.document.write(`<html><head><title>${name}'s Resume</title></head><body>${resumeHTML}</body></html>`);
-        printWindow === null || printWindow === void 0 ? void 0 : printWindow.document.close();
-        printWindow === null || printWindow === void 0 ? void 0 : printWindow.focus();
-        printWindow === null || printWindow === void 0 ? void 0 : printWindow.print();
-        printWindow === null || printWindow === void 0 ? void 0 : printWindow.close();
-    });
     // Generate a unique URL
     const myName = username.toLowerCase().replace(/\s+/g, "-");
     const baseUrl = window.location.origin + window.location.pathname;
-    uniqueUrl = `${baseUrl}?user=${myName}/resume`;
+    uniqueUrl = `${baseUrl}?user=${myName}`;
     // Set the unique URL for sharing
-    urlButton.addEventListener('click', () => {
-        getUrlLink.setAttribute("href", uniqueUrl);
-    });
-    // Add event listener for the "Copy Address" button
-    copyLinkButton.addEventListener('click', () => {
+    getUrlLink.setAttribute("href", uniqueUrl);
+});
+// Add event listener for the "Copy Address" button
+copyLinkButton.addEventListener('click', () => {
+    if (uniqueUrl) {
         navigator.clipboard.writeText(uniqueUrl).then(() => {
             alert("Copy Successfully");
+        }).catch(() => {
+            alert("Failed to copy the address.");
         });
-    });
+    }
+    else {
+        alert("No URL generated yet. Please generate a resume first.");
+    }
+});
+// Handle download as PDF
+downloadPdfButton.addEventListener('click', () => {
+    if (resumeDisplayElement.innerHTML.trim() === "") {
+        alert("No resume data to print. Please generate a resume first.");
+        return;
+    }
+    const printWindow = window.open('', '', 'width=800,height=600');
+    if (printWindow) {
+        printWindow.document.write(`<html><head><title>Resume</title></head><body>${resumeDisplayElement.innerHTML}</body></html>`);
+        printWindow.document.close();
+        printWindow.focus();
+        printWindow.print();
+        printWindow.close();
+    }
+    else {
+        alert("Failed to open print window. Please try again.");
+    }
 });
 // Auto-populate resume from URL
 window.addEventListener('DOMContentLoaded', () => {
@@ -88,15 +102,9 @@ window.addEventListener('DOMContentLoaded', () => {
                 <p contenteditable="true"><b>${skills}</b></p>
             `;
             resumeDisplayElement.innerHTML = resumeHTML;
-            // Handle download as PDF as a new tab
-            downloadPdfButton.addEventListener('click', () => {
-                const printWindow = window.open('', '', 'width=800,height=600');
-                printWindow === null || printWindow === void 0 ? void 0 : printWindow.document.write(`<html><head><title>${name}'s Resume</title></head><body>${resumeHTML}</body></html>`);
-                printWindow === null || printWindow === void 0 ? void 0 : printWindow.document.close();
-                printWindow === null || printWindow === void 0 ? void 0 : printWindow.focus();
-                printWindow === null || printWindow === void 0 ? void 0 : printWindow.print();
-                printWindow === null || printWindow === void 0 ? void 0 : printWindow.close();
-            });
+            // Enable buttons
+            urlButton.disabled = false;
+            copyLinkButton.disabled = false;
         }
     }
 });
