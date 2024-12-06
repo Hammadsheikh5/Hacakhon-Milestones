@@ -105,16 +105,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
             resumeDisplayElement.innerHTML = resumeHTML;
 
-            // Enable buttons as a new tab
-            urlButton.disabled = false;
-            copyLinkButton.disabled = false;
-
-            // Add event listener for the "Copy Address" button as a new tab
-            copyLinkButton.addEventListener('click', () => {
-                navigator.clipboard.writeText(uniqueUrl).then(() => {
-                    alert("Copy Successfully");
-                });
-            });
 
             // Handle download as PDF as a new tab
             downloadPdfButton.addEventListener('click', () => {
