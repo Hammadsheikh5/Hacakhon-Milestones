@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editabe And Shareable Resume</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Editable resume Builder</h1>
+    <p id="Objective">Milestone 5: Unique Path and Shareable Link (100 Points) <br>
+        Objective: Generate a unique URL for each resume based on the user’s username, and allow the resume to be shared and downloaded.</p>
+    <form id="resume-form">
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="username"> <b>UserName :</b></label>
+            <input type="text" id="username" placeholder="Enter Your Name" required>
+            <label for="name"><b>Name :</b></label>
+            <input type="text" id="name" placeholder="Enter Your Name" required>
+            <label for="email"><b>Email :</b></label>
+            <input type="email" id="email" placeholder="Enter Your Email Address" required>
+            <label for="phone"><b>Phone :</b></label>
+            <input type="phone" id="phone" placeholder="Enter Your Phone No" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Education</legend>
+            <label for="education"><b>Education :</b></label>
+            <textarea id="education" placeholder="Enter Your Education Here" rows="5" required ></textarea>
+        </fieldset>
+        <fieldset>
+            <legend>Experience</legend>
+            <label for="experience"><b>Experience :</b></label>
+            <textarea id="experience" placeholder="Enter Your Experience Here" rows="5" required ></textarea>
+        </fieldset>
+        <fieldset>
+            <legend>Skills</legend>
+            <label for="skills"><b>Skills :</b></label>
+            <textarea id="skills" placeholder="Enter Your Skills Here" rows="5" required ></textarea>
+        </fieldset>
+        <div id="buttonadjust">
+            <button type="submit" id="submit-button">Generate Resume</button>
+        </div>
+    </form>
+    <br>
+
+    <!-- Dynamic and Editable resume  -->
+    <div id="resume-display" >
+        <!-- Resume Wil be display here  -->
+    </div>
+
+    <br>
+
+    <!-- Buttons for sharing and downloading -->
+    <div id="url-download-content">
+        <button id="download-btn" class="btn">Download as PDF</button>
+        <a href="#" target="_blank" id="get-url-link"><button id="url-btn" class="btn" >Get URL</button></a>
+        <!-- <button id="url-btn" class="btn" ><a href="#" target="_blank" id="get-url-link">Get URL</a></button> -->
+        <button id="copy-link-button" class="btn">Copy Address</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
