@@ -104,3 +104,44 @@ button:hover{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     outline: none;
 }
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    form {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    #submit-button {
+        font-size: 14px;
+        height: 35px;
+    }
+
+    fieldset {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2em;
+    }
+
+    #submit-button {
+        font-size: 12px;
+        height: 30px;
+    }
+
+    input, textarea {
+        font-size: 14px;
+    }
+
+    #resume-display {
+        padding: 10px;
+    }
+}
